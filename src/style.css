@@ -155,18 +155,6 @@ main {
     margin-top: -3rem;
 }
 
-ul {
-    padding: 10px;
-    font-family: 'Archivo Black', sans-serif;
-}
-
-li {
-    list-style-type: none;
-
-}
-
-li:hover {}
-
 .about-me {
     grid-row: 3;
 
@@ -187,3 +175,67 @@ li:hover {}
     grid-row: 5;
     background-color: var(--space-cadet);
 }
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.cube {
+    /* position: absolute; */
+    left: 1rem;
+    height: 1.5rem;
+    width: 100px;
+    transform-style: preserve-3d;
+    transform: rotateY(10deg) rotateX(10deg) rotateZ(1.5deg);
+
+}
+
+.side {
+    position: absolute;
+    width: 100%;
+}
+
+.front {
+    height: 100%;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    border: 1px solid black;
+    transform: translateZ(50px);
+    background-color: var(--scarlet);
+
+}
+
+.left {
+    height: 100%;
+    transform: translateX(-50%) rotateY(90deg);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.bottom {
+    height: 400%;
+    transform: translateY(-25.5%) rotateX(90deg);
+    border-right: 1px solid black;
+}
+
+@keyframes popout {
+    from {
+
+    }
+
+    to {
+
+    }
+    
+}
+
+ul {
+    padding: 8px;
+}
+
+li {
+    list-style-type: none;
+}
+
+li:hover {}
