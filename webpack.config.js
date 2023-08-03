@@ -10,7 +10,8 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        clean: true,
+        // clean: true,
+
 
     },
     module: {
@@ -33,7 +34,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Portfolio',
+            template: './src/index.html',
         }),
     ],
 
