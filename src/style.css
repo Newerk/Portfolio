@@ -250,8 +250,12 @@ p {
     background-color: black;
     display: grid;
     padding: .5rem;
-    grid-row: 1fr auto;
+    grid-row: auto 1fr auto;
 
+}
+
+.project-name {
+    color: var(--maize);
 }
 
 .summary {
@@ -266,9 +270,8 @@ p {
 
 }
 
-.links > p{
+.links>p {
     cursor: pointer;
-
 }
 
 .contact {
