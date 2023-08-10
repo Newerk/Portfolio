@@ -42,6 +42,7 @@ body {
     -webkit-font-smoothing: antialiased;
     height: fit-content;
     width: 100%;
+    overflow-x: hidden;
 
 }
 
@@ -262,7 +263,7 @@ p {
     color: var(--aquamarine);
 }
 
-.links {
+.project-info>.links {
     display: flex;
     justify-content: end;
     color: var(--aquamarine);
@@ -276,9 +277,41 @@ p {
 
 .contact {
     grid-row: 5;
-    background-color: var(--scarlet);
     height: 40rem;
-    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    min-width: 30rem;
+    max-width: 60rem;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+}
+
+.contact-title {
+    text-align: end;
+}
+
+.contact-container>.links {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+}
+
+#email {
+    text-decoration: none;
+    color: black;
+    font-family: var(--font-noto);
+    font-size: 3rem;
 }
 
 nav {
