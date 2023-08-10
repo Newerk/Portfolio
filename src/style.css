@@ -278,15 +278,14 @@ p {
 .contact {
     grid-row: 5;
     height: 40rem;
-
+    background-color: var(--scarlet);
     display: flex;
     justify-content: center;
 }
 
 .contact-container {
-    min-width: 30rem;
-    max-width: 60rem;
-    height: 100%;
+    width: calc(100vw - 20%);
+    height: 20rem;
 
     display: grid;
     grid-template-rows: auto 1fr;
@@ -299,19 +298,30 @@ p {
 
 .contact-container>.links {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
 }
 
 .socials {
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
+    font-family: var(--font-noto);
+    gap: 1rem;
 }
 
 #email {
     text-decoration: none;
-    color: black;
-    font-family: var(--font-noto);
+    color: var(--maize);
+    font-family: var(--font-tilt);
     font-size: 3rem;
+    text-align: end;
+}
+
+@media (max-width: 40rem) {
+    #email {
+        font-size: 2rem;
+    }
+    
 }
 
 nav {
