@@ -15,6 +15,10 @@
     --h3-font-size: 2rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
