@@ -307,7 +307,36 @@ p {
     justify-content: flex-end;
     font-family: var(--font-noto);
     gap: 1rem;
+    height: max-content;
 }
+
+#resume,
+#github,
+#linkedin {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+
+}
+
+#resume::after,
+#github::after,
+#linkedin::after {
+    content: '';
+    display: block;
+    border-bottom: 2px solid black;
+    transform: scaleX(0);
+    transition: transform 100ms ease-in-out;
+
+
+}
+
+#resume:hover::after,
+#github:hover::after,
+#linkedin:hover::after {
+    transform: scaleX(1);
+}
+
 
 #email {
     text-decoration: none;
@@ -321,7 +350,7 @@ p {
     #email {
         font-size: 2rem;
     }
-    
+
 }
 
 nav {
