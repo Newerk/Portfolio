@@ -120,13 +120,19 @@ main {
 
 }
 
-.test-container {
+.main-container {
     display: grid;
     grid-template-rows: auto auto auto;
     height: fit-content;
     width: fit-content;
-    margin: auto;
+    margin: auto;  
 }
+
+#hello-wrapper, #my-name-wrapper, #fullstack-wrapper {
+    height: max-content;
+    width: max-content;
+}
+
 
 .hello {
     font-size: 2vw;
@@ -134,6 +140,7 @@ main {
     height: fit-content;
     padding-left: 2.8vw;
 }
+
 
 .my-name {
     display: flex;
@@ -449,7 +456,7 @@ li {
     .contact-title {
         text-align: center;
         line-height: 3rem;
-        }
+    }
 
     #email {
         font-size: 2rem;
