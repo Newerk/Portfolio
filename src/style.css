@@ -105,10 +105,21 @@ a {
 }
 
 header {
+    position: fixed;
     grid-row: 1;
     width: 100vw;
     height: var(--header-height);
     background-color: var(--scarlet);
+}
+
+.header-name {
+    font-family: var(--font-archivo);
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 main {
@@ -117,6 +128,7 @@ main {
     height: 100%;
     width: 100%;
     background-color: var(--scarlet);
+    margin-top: var(--header-height);
 
 }
 
@@ -125,12 +137,14 @@ main {
     grid-template-rows: auto auto auto;
     height: fit-content;
     width: fit-content;
-    margin: auto;  
+    margin: auto;
 }
 
-#hello-wrapper, #my-name-wrapper, #fullstack-wrapper {
+#hello-wrapper,
+#my-name-wrapper {
     height: max-content;
     width: max-content;
+    z-index: 2;
 }
 
 
@@ -140,6 +154,7 @@ main {
     height: fit-content;
     padding-left: 2.8vw;
 }
+
 
 
 .my-name {
@@ -163,8 +178,46 @@ main {
     color: black;
 }
 
+.relocated {
+    font-family: var(--font-archivo);
+    font-size: 3rem;
+    line-height: 3rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.flatten {
+    transform: animation;
+    animation: flatten 1s linear 1 forwards;
+}
+
+@keyframes flatten {
+    from {
+        transform: rotateX(0deg);
+
+    }
+    
+    to {
+        transform: rotateX(90deg);
+
+    }
+}
+
+#hello-wrapper{
+    transform-origin: bottom;
+
+}
+
+
+#fullstack-wrapper {
+    display: flex;
+    justify-content: end;
+
+    transform-origin: top;
+}
+
 .fullstack {
-    text-align: end;
     font-size: 2vw;
     font-family: var(--font-noto);
 
@@ -187,7 +240,7 @@ main {
 
     display: flex;
     justify-content: center;
-    margin-top: 6rem;
+    margin-top: 9rem;
 }
 
 .about-me>.container {
