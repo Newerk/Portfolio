@@ -17,6 +17,7 @@
 
 html {
     scroll-behavior: smooth;
+    background-color: var(--scarlet);
 }
 
 /*
@@ -174,23 +175,17 @@ main {
 .about-me {
     grid-row: 3;
 
-    top: 100vh;
-    height: 100vh;
-    width: 100vw;
+    height: max-content;
     background-color: var(--scarlet);
 
     display: flex;
     justify-content: center;
-    align-items: start;
-    padding-top: 6rem;
-    margin-bottom: -5rem;
-
+    margin-top: 6rem;
 }
 
 .about-me>.container {
     min-width: 30rem;
     max-width: 60rem;
-    height: 100%;
 }
 
 [class $="title"] {
@@ -215,7 +210,7 @@ p {
     justify-content: center;
     grid-row: 4;
     background-color: var(--scarlet);
-    padding-top: 5rem;
+    margin-top: 5rem;
 
 }
 
@@ -223,6 +218,7 @@ p {
     display: grid;
     grid-template-rows: auto 1fr;
     width: 80%;
+    place-content: center;
 
 }
 
@@ -231,6 +227,7 @@ p {
 }
 
 .cards-wrapper {
+
     display: grid;
     gap: 1rem;
 
@@ -285,17 +282,18 @@ p {
     cursor: pointer;
 }
 
+
 .contact {
-    padding-top: 5rem;
+    padding-top: 10rem;
     grid-row: 5;
-    height: 40rem;
+    height: max-content;
     background-color: var(--scarlet);
     display: flex;
     justify-content: center;
 }
 
 .contact-container {
-    width: calc(100vw - 20%);
+    width: 960px;
     height: 20rem;
 
     display: grid;
@@ -303,9 +301,11 @@ p {
 
 }
 
+
 .contact-title {
     text-align: end;
 }
+
 
 .contact-container>.links {
     display: grid;
@@ -334,7 +334,7 @@ p {
 #linkedin::after {
     content: '';
     display: block;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--space-cadet);
     transform: scaleX(0);
     transition: transform 100ms ease-in-out;
 
@@ -347,20 +347,22 @@ p {
     transform: scaleX(1);
 }
 
+.email-wrapper {
+    display: flex;
+    justify-content: end;
+}
 
 #email {
     text-decoration: none;
     color: var(--maize);
     font-family: var(--font-tilt);
     font-size: 3rem;
-    text-align: end;
+    transition: 200ms;
+    width: max-content;
 }
 
-@media (max-width: 40rem) {
-    #email {
-        font-size: 2rem;
-    }
-
+#email:hover {
+    color: var(--space-cadet);
 }
 
 nav {
@@ -427,4 +429,51 @@ ul {
 
 li {
     list-style-type: none;
+}
+
+@media (max-width: 1200px) {
+    .about-me>.container {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .contact-container {
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .contact-title {
+        text-align: center;
+        line-height: 3rem;
+        }
+
+    #email {
+        font-size: 2rem;
+        margin-top: 2rem;
+
+    }
+
+    .email-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+
+
+}
+
+
+@media (max-width: 600px) {
+    .about-me>.container {
+        width: 80%;
+    }
+
+
 }
