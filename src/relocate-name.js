@@ -1,12 +1,33 @@
-export const relocateName = () => {
-    const name = document.body.querySelector('#my-name-wrapper');
+import _ from "lodash"
 
-    name.addEventListener('click', () => {
-        document.body.querySelector('.my-name').classList.toggle('relocated');
-        // document.body.querySelector('.my-name').classList.toggle('hidden');
-        document.body.querySelector('.hello').classList.toggle('hidden');
-        document.body.querySelector('.fullstack').classList.toggle('hidden');
-        // document.body.querySelector('.hello').classList.toggle('flatten');
-        // document.body.querySelector('.fullstack').classList.toggle('flatten');
-    })
+const name = document.body.querySelector('.my-name');
+const hello = document.body.querySelector('.hello');
+const fullstack = document.body.querySelector('.fullstack');
+const header = document.body.querySelector('header');
+const headerName = document.querySelector('.header-name');
+
+const relocateName = () => {
+    if (window.scrollY > 200) {
+        console.log('name is in <header>')
+        headerName.classList.remove('hidden');
+        hello.classList.add('hidden');
+        name.classList.add('hidden');
+        fullstack.classList.add('hidden');
+
+    }
+
+    if (window.scrollY < 100) {
+        console.log('name is in <main>')
+        headerName.classList.add('hidden')
+        hello.classList.remove('hidden');
+        name.classList.remove('hidden');
+        fullstack.classList.remove('hidden');
+
+
+    }
+
 }
+
+export const checkScrollValue = () => {
+    window.addEventListener('scroll', _.throttle(relocateName, 150))
+};
