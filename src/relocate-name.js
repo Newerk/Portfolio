@@ -13,7 +13,6 @@ const relocateName = () => {
         hello.classList.add('hidden');
         name.classList.add('hidden');
         fullstack.classList.add('hidden');
-
     }
 
     if (window.scrollY < 100) {
@@ -22,7 +21,6 @@ const relocateName = () => {
         hello.classList.remove('hidden');
         name.classList.remove('hidden');
         fullstack.classList.remove('hidden');
-
 
     }
 

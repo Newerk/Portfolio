@@ -327,6 +327,7 @@ p {
     display: grid;
     padding: .5rem;
     grid-row: auto 1fr auto;
+    font-family: var(--font-noto);
 
 }
 
@@ -342,12 +343,13 @@ p {
     display: flex;
     justify-content: end;
     color: var(--aquamarine);
-    gap: 10px;
+    gap: 2rem;
 
 }
 
-.links>p {
+.links>a {
     cursor: pointer;
+    color: var(--aquamarine);
 }
 
 
