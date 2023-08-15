@@ -7,7 +7,7 @@ const header = document.body.querySelector('header');
 const headerName = document.querySelector('.header-name');
 
 const relocateName = () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 140) {
         console.log('name is in <header>')
         headerName.classList.remove('hidden');
         hello.classList.add('hidden');

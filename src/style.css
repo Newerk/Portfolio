@@ -111,10 +111,13 @@ header {
     width: 100vw;
     height: var(--header-height);
     background-color: var(--scarlet);
+    flex-wrap: nowrap;
+    justify-content: space-between;
 
 }
 
 .header-name {
+    white-space: nowrap;
     font-family: var(--font-archivo);
     font-size: 3rem;
     line-height: 3rem;
@@ -203,14 +206,14 @@ main {
         transform: rotateX(0deg);
 
     }
-    
+
     to {
         transform: rotateX(90deg);
 
     }
 }
 
-#hello-wrapper{
+#hello-wrapper {
     transform-origin: bottom;
 
 }
@@ -248,7 +251,7 @@ main {
 
     display: flex;
     justify-content: center;
-    padding-top: 9rem;
+    padding-top: 8rem;
 }
 
 .about-me>.container {
@@ -350,6 +353,8 @@ p {
 .links>a {
     cursor: pointer;
     color: var(--aquamarine);
+    display: flex;
+    align-items: end;
 }
 
 
@@ -435,7 +440,7 @@ p {
     color: var(--space-cadet);
 }
 
-nav {
+.sidebar>nav {
     display: flex;
     flex-direction: column;
     margin-left: -8px;
@@ -459,6 +464,14 @@ nav {
 .selection:active {
     transition: 0s none;
     transform: rotateY(6deg) rotateX(6deg);
+}
+
+#header>nav>ul {
+    visibility: hidden;
+    display: flex;
+    gap: 2rem;
+    line-height: 2rem;
+    font-family: var(--font-tilt);
 }
 
 
@@ -515,6 +528,31 @@ li {
 
 }
 
+@media (max-width: 1000px) {
+    .sidebar {
+        visibility: hidden;
+    }
+
+    #header>nav>ul {
+        visibility: visible;
+
+    }
+
+    main {
+        z-index: -1;
+    }
+}
+
+@media (max-width: 900px) {
+    header {
+        justify-content: center;
+    }
+    .header-name {
+        visibility: hidden;
+        width: 0;
+    }
+}
+
 @media (max-width: 700px) {
     .contact-title {
         text-align: center;
@@ -535,7 +573,6 @@ li {
     .socials {
         justify-content: center;
     }
-
 
 }
 
