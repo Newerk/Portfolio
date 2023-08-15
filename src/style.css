@@ -108,11 +108,15 @@ header {
     display: flex;
     position: fixed;
     grid-row: 1;
-    width: 100vw;
+    width: 100%;
     height: var(--header-height);
     background-color: var(--scarlet);
     flex-wrap: nowrap;
     justify-content: space-between;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
 
 }
 
@@ -251,7 +255,7 @@ main {
 
     display: flex;
     justify-content: center;
-    padding-top: 8rem;
+    padding-top: 5rem;
 }
 
 .about-me>.container {
@@ -531,11 +535,15 @@ li {
 @media (max-width: 1000px) {
     .sidebar {
         visibility: hidden;
+        width: 0;
+    }
+
+    .selection {
+        transform: translateX(-100px);
     }
 
     #header>nav>ul {
         visibility: visible;
-
     }
 
     main {
@@ -544,13 +552,11 @@ li {
 }
 
 @media (max-width: 900px) {
-    header {
-        justify-content: center;
-    }
     .header-name {
         visibility: hidden;
         width: 0;
     }
+
 }
 
 @media (max-width: 700px) {
@@ -578,6 +584,10 @@ li {
 
 
 @media (max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+
     .about-me>.container {
         width: 80%;
     }
