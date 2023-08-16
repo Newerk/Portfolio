@@ -48,7 +48,6 @@ body {
     height: fit-content;
     width: 100%;
     overflow-x: hidden;
-
 }
 
 /*
@@ -113,11 +112,8 @@ header {
     background-color: var(--scarlet);
     flex-wrap: nowrap;
     justify-content: space-between;
-
     margin-left: 0 !important;
     margin-right: 0 !important;
-
-
 }
 
 .header-name {
@@ -133,11 +129,9 @@ header {
 
 main {
     grid-row: 2;
-
     width: 100%;
     background-color: var(--scarlet);
     margin-top: var(--header-height);
-
 }
 
 .main-container {
@@ -161,7 +155,6 @@ main {
     width: 100%;
     z-index: 2;
     transform: translateX(-23.9rem);
-
 }
 
 #my-name-wrapper {
@@ -170,7 +163,6 @@ main {
     color: var(--scarlet);
     cursor: default;
     height: 5rem;
-
 }
 
 .hello {
@@ -178,8 +170,6 @@ main {
     height: fit-content;
     font-size: 2rem;
 }
-
-
 
 .my-name {
     font-size: 7rem;
@@ -191,12 +181,10 @@ main {
     line-height: 5rem;
 }
 
-
 #fullstack-wrapper {
     z-index: 2;
     display: flex;
     justify-content: end;
-
 }
 
 .fullstack {
@@ -219,10 +207,8 @@ main {
 
 .about-me {
     grid-row: 3;
-
     height: max-content;
     background-color: var(--scarlet);
-
     display: flex;
     justify-content: center;
     padding-top: 5rem;
@@ -231,6 +217,12 @@ main {
 .about-me>.container {
     min-width: 30rem;
     max-width: 60rem;
+}
+
+.skills-container {
+    display: flex;
+    width: 100%;
+    font-family: var(--font-noto);
 }
 
 [class $="title"] {
@@ -256,7 +248,6 @@ p {
     grid-row: 4;
     background-color: var(--scarlet);
     padding-top: 5rem;
-
 }
 
 .projects>.container {
@@ -264,24 +255,20 @@ p {
     grid-template-rows: auto 1fr;
     width: 80%;
     place-content: center;
-
 }
 
 .projects-title {
     text-align: center;
 }
 
-.cards-wrapper {
 
+.cards-container {
     display: grid;
     gap: 1rem;
-
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     grid-auto-flow: row;
     padding-top: 1rem;
-
 }
-
 
 [class^="card-"] {
     border: 2px solid black;
@@ -302,9 +289,8 @@ p {
     background-color: black;
     display: grid;
     padding: .5rem;
-    grid-row: auto 1fr auto;
+    grid-row: auto auto auto;
     font-family: var(--font-noto);
-
 }
 
 .project-name {
@@ -330,7 +316,6 @@ p {
     align-items: end;
 }
 
-
 .contact {
     padding-top: 10rem;
     grid-row: 5;
@@ -343,17 +328,13 @@ p {
 .contact-container {
     width: 960px;
     height: 20rem;
-
     display: grid;
     grid-template-rows: auto 1fr;
-
 }
-
 
 .contact-title {
     text-align: end;
 }
-
 
 .contact-container>.links {
     display: grid;
@@ -374,7 +355,6 @@ p {
 #linkedin {
     display: inline-block;
     color: black;
-
 }
 
 #resume::after,
@@ -385,8 +365,6 @@ p {
     border-bottom: 2px solid var(--space-cadet);
     transform: scaleX(0);
     transition: transform 100ms ease-in-out;
-
-
 }
 
 #resume:hover::after,
@@ -447,8 +425,6 @@ p {
     font-family: var(--font-tilt);
 }
 
-
-
 .side {
     position: absolute;
     width: 100%;
@@ -461,7 +437,6 @@ p {
     border: 1px solid black;
     transform: translateZ(50px);
     background-color: var(--scarlet);
-
 }
 
 .left {
@@ -471,7 +446,6 @@ p {
     border-bottom: 1px solid black;
     background-color: var(--scarlet);
 }
-
 
 .bottom {
     height: 400%;
@@ -485,6 +459,13 @@ ul {
 
 li {
     list-style-type: none;
+}
+
+@media (min-width: 3270px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+
 }
 
 @media (min-width: 1440px) {
@@ -503,7 +484,7 @@ li {
     }
 
 
-    
+
 }
 
 @media (max-width: 1200px) {
@@ -520,7 +501,6 @@ li {
 
 
 }
-
 
 @media (max-width: 1000px) {
     .sidebar {
@@ -552,8 +532,6 @@ li {
     #hello-wrapper {
         transform: translateX(-17.9rem);
     }
-
-
 }
 
 @media (max-width: 900px) {
@@ -569,8 +547,6 @@ li {
     .fullstack {
         font-size: 1rem;
     }
-
-
 }
 
 @media (max-width: 700px) {
@@ -582,7 +558,6 @@ li {
     #email {
         font-size: 2rem;
         margin-top: 2rem;
-
     }
 
     .email-wrapper {
@@ -606,9 +581,7 @@ li {
     #hello-wrapper {
         transform: translateX(-13.9rem);
     }
-
 }
-
 
 @media (max-width: 600px) {
     header {
@@ -629,12 +602,10 @@ li {
         justify-content: center;
         width: 100vw;
         transform: translateX(0);
-
     }
 
     #fullstack-wrapper {
         justify-content: center;
-
     }
 
     .my-name {
@@ -645,10 +616,6 @@ li {
         line-height: 4rem;
         font-size: 5rem;
     }
-
-    .fullstack {}
-
-
 }
 
 
