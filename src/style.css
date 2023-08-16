@@ -148,41 +148,47 @@ main {
     margin: auto;
 }
 
-#hello-wrapper,
 #my-name-wrapper {
     height: max-content;
     width: max-content;
     z-index: 2;
 }
 
+#hello-wrapper {
+    display: flex;
+    justify-content: center;
+    height: max-content;
+    width: 100%;
+    z-index: 2;
+    transform: translateX(-23.9rem);
+
+}
+
 #my-name-wrapper {
     font-family: var(--font-archivo);
     -webkit-text-stroke: 2px black;
     color: var(--scarlet);
     cursor: default;
-    height: 7rem;
+    height: 5rem;
 
 }
 
 .hello {
     font-family: var(--font-tilt);
     height: fit-content;
-    padding-left: 2.1rem;
     font-size: 2rem;
 }
 
 
 
 .my-name {
-    font-size: 10rem;
+    font-size: 7rem;
     font-family: var(--font-archivo);
     -webkit-text-stroke: 2px black;
     color: var(--scarlet);
     cursor: default;
     padding: 0;
-
-    line-height: 7rem;
-
+    line-height: 5rem;
 }
 
 
@@ -482,6 +488,25 @@ li {
     list-style-type: none;
 }
 
+@media (min-width: 1440px) {
+    .my-name {
+        font-size: 10rem;
+        line-height: 7rem;
+
+    }
+
+    #my-name-wrapper {
+        height: 7rem;
+    }
+
+    #hello-wrapper {
+        transform: translateX(-35.8rem);
+    }
+
+
+    
+}
+
 @media (max-width: 1200px) {
     .about-me>.container {
         padding-left: 10%;
@@ -494,16 +519,6 @@ li {
         width: 100%;
     }
 
-
-    .my-name {
-        font-size: 7rem;
-        line-height: 5rem;
-
-    }
-
-    #my-name-wrapper {
-        height: 5rem;
-    }
 
 }
 
@@ -526,6 +541,20 @@ li {
         z-index: -1;
     }
 
+    .my-name {
+        font-size: 5rem;
+        line-height: 4rem;
+    }
+
+    #my-name-wrapper {
+        height: 4rem;
+    }
+
+    #hello-wrapper {
+        transform: translateX(-17.9rem);
+    }
+
+
 }
 
 @media (max-width: 900px) {
@@ -541,16 +570,6 @@ li {
     .fullstack {
         font-size: 1rem;
     }
-
-    .my-name {
-        font-size: 5rem;
-        line-height: 4rem;
-    }
-
-    #my-name-wrapper {
-        height: 4rem;
-    }
-
 
 
 }
@@ -576,8 +595,6 @@ li {
         justify-content: center;
     }
 
-    .hello {}
-
     .my-name {
         font-size: 4rem;
         line-height: 3rem;
@@ -587,8 +604,9 @@ li {
         height: 3rem;
     }
 
-    .fullstack {}
-
+    #hello-wrapper {
+        transform: translateX(-13.9rem);
+    }
 
 }
 
@@ -611,15 +629,12 @@ li {
         display: flex;
         justify-content: center;
         width: 100vw;
+        transform: translateX(0);
+
     }
 
     #fullstack-wrapper {
         justify-content: center;
-
-    }
-
-    .hello {
-        padding: 0;
 
     }
 
