@@ -285,11 +285,10 @@ p {
 
 [class^="card-"] {
     border: 2px solid black;
-    height: min-content;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1.5fr 1fr;
-
+    background-color: black;
 }
 
 .thumbnail {
