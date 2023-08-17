@@ -548,11 +548,16 @@ li {
     }
 
     #hello-wrapper {
-        transform: translateX(-17.9rem);
+        transform: translateX(-16rem);
     }
+
 }
 
 @media (max-width: 900px) {
+    #hello-wrapper {
+        transform: translateX(-17.9rem);
+    }
+
     .header-name {
         visibility: hidden;
         width: 0;
@@ -565,6 +570,8 @@ li {
     .fullstack {
         font-size: 1rem;
     }
+
+
 }
 
 @media (max-width: 700px) {
