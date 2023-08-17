@@ -193,6 +193,8 @@ main {
 }
 
 .my-name:hover {
+    transition: 200ms;
+
     color: black;
 }
 
@@ -219,10 +221,20 @@ main {
     max-width: 60rem;
 }
 
+.skills-title {
+    margin-top: 2rem;
+}
+
 .skills-container {
     display: flex;
     width: 100%;
     font-family: var(--font-noto);
+    gap: 3rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
 }
 
 [class $="title"] {
@@ -461,12 +473,18 @@ li {
     list-style-type: none;
 }
 
+
 @media (min-width: 3270px) {
     .cards-container {
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        width: 40vw;
     }
 
+    #contact-sec {
+        padding-top: 6rem;
+    }
 }
+
 
 @media (min-width: 1440px) {
     .my-name {
