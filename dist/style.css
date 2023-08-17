@@ -121,10 +121,12 @@ header {
     font-family: var(--font-archivo);
     font-size: 3rem;
     line-height: 3rem;
+    transition: 100ms ease-in-out;
+
 }
 
 .hidden {
-    visibility: hidden;
+    opacity: 0;
 }
 
 main {
@@ -559,7 +561,7 @@ li {
     }
 
     .header-name {
-        visibility: hidden;
+        opacity: 1;
         width: 0;
     }
 
