@@ -5,664 +5,663 @@
     <meta charset="utf-8">
     <title>Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="/src/style.css"> -->
+    <link rel="stylesheet" href="../src/style.css">
 <script defer src="main.bundle.js"></script></head>
 
 <body>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
 
-:root {
-    --scarlet: #ff220c;
-    --space-cadet: #1c1f33;
-    --maize: #FFF689;
-    --aquamarine: #00FFCD;
-    --header-height: 3rem;
-    --font-archivo: 'Archivo Black', sans-serif;
-    --font-noto: 'Noto Sans Mono', monospace;
-    --font-tilt: 'Tilt Warp', cursive;
-    --h2-font-size: 4rem;
-    --h3-font-size: 2rem;
-}
-
-html {
-    scroll-behavior: smooth;
-    background-color: var(--scarlet);
-}
-
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-/*
-  2. Remove default margin
-*/
-* {
-    margin: 0;
-}
-
-/*
-  Typographic tweaks!
-  3. Add accessible line-height
-  4. Improve text rendering
-*/
-
-body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    height: fit-content;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-/*
-  5. Improve media defaults
-*/
-img,
-picture,
-video,
-canvas,
-svg {
-    display: block;
-    max-width: 100%;
-}
-
-/*
-  6. Remove built-in form typography styles
-*/
-input,
-button,
-textarea,
-select {
-    font: inherit;
-}
-
-/*
-  7. Avoid text overflows
-*/
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    overflow-wrap: break-word;
-}
-
-/*
-  8. Create a root stacking context
-*/
-#root,
-#__next {
-    isolation: isolate;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-.content {
-    display: grid;
-    grid-template-rows: repeat(5, auto);
-}
-
-header {
-    display: flex;
-    position: fixed;
-    grid-row: 1;
-    width: 100%;
-    height: var(--header-height);
-    background-color: var(--scarlet);
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-.header-name {
-    white-space: nowrap;
-    font-family: var(--font-archivo);
-    font-size: 3rem;
-    line-height: 3rem;
-}
-
-.hidden {
-    visibility: hidden;
-}
-
-main {
-    grid-row: 2;
-    width: 100%;
-    background-color: var(--scarlet);
-    margin-top: var(--header-height);
-}
-
-.main-container {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    height: fit-content;
-    width: fit-content;
-    margin: auto;
-}
-
-#my-name-wrapper {
-    height: max-content;
-    width: max-content;
-    z-index: 2;
-}
-
-#hello-wrapper {
-    display: flex;
-    justify-content: center;
-    height: max-content;
-    width: 100%;
-    z-index: 2;
-    transform: translateX(-23.9rem);
-}
-
-#my-name-wrapper {
-    font-family: var(--font-archivo);
-    -webkit-text-stroke: 2px black;
-    color: var(--scarlet);
-    cursor: default;
-    height: 5rem;
-}
-
-.hello {
-    font-family: var(--font-tilt);
-    height: fit-content;
-    font-size: 2rem;
-}
-
-.my-name {
-    font-size: 7rem;
-    font-family: var(--font-archivo);
-    -webkit-text-stroke: 2px black;
-    color: var(--scarlet);
-    cursor: default;
-    padding: 0;
-    line-height: 5rem;
-}
-
-#fullstack-wrapper {
-    z-index: 2;
-    display: flex;
-    justify-content: end;
-}
-
-.fullstack {
-    font-family: var(--font-noto);
-    font-size: 2rem;
-}
-
-.my-name:hover {
-    transition: 200ms;
-
-    color: black;
-}
-
-.sidebar {
-    z-index: 5;
-    position: fixed;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    margin-top: -3rem;
-}
-
-.about-me {
-    grid-row: 3;
-    height: max-content;
-    background-color: var(--scarlet);
-    display: flex;
-    justify-content: center;
-    padding-top: 5rem;
-}
-
-.about-me>.container {
-    min-width: 30rem;
-    max-width: 60rem;
-}
-
-.skills-title {
-    margin-top: 2rem;
-}
-
-.skills-container {
-    display: flex;
-    width: 100%;
-    font-family: var(--font-noto);
-    gap: 3rem;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
-[class $="title"] {
-    font-family: var(--font-archivo);
-}
-
-h2 {
-    font-size: var(--h2-font-size);
-
-}
-
-h3 {
-    font-size: var(--h3-font-size);
-}
-
-p {
-    font-family: var(--font-noto);
-}
-
-.projects {
-    display: flex;
-    justify-content: center;
-    grid-row: 4;
-    background-color: var(--scarlet);
-    padding-top: 5rem;
-}
-
-.projects>.container {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    width: 80%;
-    place-content: center;
-}
-
-.projects-title {
-    text-align: center;
-}
-
-
-.cards-container {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    grid-auto-flow: row;
-    padding-top: 1rem;
-}
-
-[class^="card-"] {
-    border: 2px solid black;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1.5fr 1fr;
-    background-color: black;
-}
-
-.thumbnail {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.project-info {
-    background-color: black;
-    display: grid;
-    padding: .5rem;
-    grid-row: auto auto auto;
-    font-family: var(--font-noto);
-}
-
-.project-name {
-    color: var(--maize);
-}
-
-.summary {
-    color: var(--aquamarine);
-}
-
-.project-info>.links {
-    display: flex;
-    justify-content: end;
-    color: var(--aquamarine);
-    gap: 2rem;
-
-}
-
-.links>a {
-    cursor: pointer;
-    color: var(--aquamarine);
-    display: flex;
-    align-items: end;
-}
-
-.contact {
-    padding-top: 10rem;
-    grid-row: 5;
-    height: max-content;
-    background-color: var(--scarlet);
-    display: flex;
-    justify-content: center;
-}
-
-.contact-container {
-    width: 960px;
-    height: 20rem;
-    display: grid;
-    grid-template-rows: auto 1fr;
-}
-
-.contact-title {
-    text-align: end;
-}
-
-.contact-container>.links {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    gap: 1rem;
-}
-
-.socials {
-    display: flex;
-    justify-content: flex-end;
-    font-family: var(--font-noto);
-    gap: 1rem;
-    height: max-content;
-}
-
-#resume,
-#github,
-#linkedin {
-    display: inline-block;
-    color: black;
-}
-
-#resume::after,
-#github::after,
-#linkedin::after {
-    content: '';
-    display: block;
-    border-bottom: 2px solid var(--space-cadet);
-    transform: scaleX(0);
-    transition: transform 100ms ease-in-out;
-}
-
-#resume:hover::after,
-#github:hover::after,
-#linkedin:hover::after {
-    transform: scaleX(1);
-}
-
-.email-wrapper {
-    display: flex;
-    justify-content: end;
-}
-
-#email {
-    text-decoration: none;
-    color: var(--maize);
-    font-family: var(--font-tilt);
-    font-size: 3rem;
-    transition: 200ms;
-    width: max-content;
-}
-
-#email:hover {
-    color: var(--space-cadet);
-}
-
-.sidebar>nav {
-    display: flex;
-    flex-direction: column;
-    margin-left: -8px;
-    margin-top: var(--header-height);
-}
-
-.selection {
-    cursor: pointer;
-    left: 1rem;
-    height: 1.5rem;
-    width: 100px;
-    transform-style: preserve-3d;
-    transform: rotateY(0) rotateX(0);
-    transition: .3s ease-in-out;
-}
-
-.selection:hover {
-    transform: rotateY(8deg) rotateX(8deg);
-}
-
-.selection:active {
-    transition: 0s none;
-    transform: rotateY(6deg) rotateX(6deg);
-}
-
-#header>nav>ul {
-    visibility: hidden;
-    display: flex;
-    gap: 2rem;
-    line-height: 2rem;
-    font-family: var(--font-tilt);
-}
-
-.side {
-    position: absolute;
-    width: 100%;
-}
-
-.front {
-    height: 100%;
-    text-align: center;
-    font-family: 'Archivo Black', sans-serif;
-    border: 1px solid black;
-    transform: translateZ(50px);
-    background-color: var(--scarlet);
-}
-
-.left {
-    height: 100%;
-    transform: translateX(-50%) rotateY(90deg);
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    background-color: var(--scarlet);
-}
-
-.bottom {
-    height: 400%;
-    transform: translateY(-25.5%) rotateX(90deg);
-    border-right: 1px solid black;
-}
-
-ul {
-    padding: 8px;
-}
-
-li {
-    list-style-type: none;
-}
-
-
-@media (min-width: 3270px) {
-    .cards-container {
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        width: 40vw;
-    }
-
-    #contact-sec {
-        padding-top: 6rem;
-    }
-}
-
-
-@media (min-width: 1440px) {
-    .my-name {
-        font-size: 10rem;
-        line-height: 7rem;
-
-    }
-
-    #my-name-wrapper {
-        height: 7rem;
-    }
-
-    #hello-wrapper {
-        transform: translateX(-35.8rem);
-    }
-
-
-
-}
-
-@media (max-width: 1200px) {
-    .about-me>.container {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-
-    .contact-container {
-        padding-left: 10%;
-        padding-right: 10%;
-        width: 100%;
-    }
-
-
-}
-
-@media (max-width: 1000px) {
-    .sidebar {
-        visibility: hidden;
-        width: 0;
-    }
-
-    .selection {
-        transform: translateX(-100px);
-    }
-
-    #header>nav>ul {
-        visibility: visible;
-    }
-
-    main {
-        z-index: -1;
-    }
-
-    .my-name {
-        font-size: 5rem;
-        line-height: 4rem;
-    }
-
-    #my-name-wrapper {
-        height: 4rem;
-    }
-
-    #hello-wrapper {
-        transform: translateX(-16rem);
-    }
-
-}
-
-@media (max-width: 900px) {
-    #hello-wrapper {
-        transform: translateX(-17.9rem);
-    }
-
-    .header-name {
-        visibility: hidden;
-        width: 0;
-    }
-
-    .hello {
-        font-size: 1rem;
-    }
-
-    .fullstack {
-        font-size: 1rem;
-    }
-
-
-}
-
-@media (max-width: 700px) {
-    .contact-title {
-        text-align: center;
-        line-height: 3rem;
-    }
-
-    #email {
-        font-size: 2rem;
-        margin-top: 2rem;
-    }
-
-    .email-wrapper {
-        display: flex;
-        justify-content: center;
-    }
-
-    .socials {
-        justify-content: center;
-    }
-
-    .my-name {
-        font-size: 4rem;
-        line-height: 3rem;
-    }
-
-    #my-name-wrapper {
-        height: 3rem;
-    }
-
-    #hello-wrapper {
-        transform: translateX(-13.9rem);
-    }
-}
-
-@media (max-width: 600px) {
-    header {
-        justify-content: center;
-    }
-
-    .about-me>.container {
-        width: 80%;
-    }
-
-
-    #my-name-wrapper {
-        height: 8rem;
-    }
-
-    #hello-wrapper {
-        display: flex;
-        justify-content: center;
-        width: 100vw;
-        transform: translateX(0);
-    }
-
-    #fullstack-wrapper {
-        justify-content: center;
-    }
-
-    .my-name {
-        display: flex;
-        justify-content: center;
-        width: 100vw;
-        text-align: center;
-        line-height: 4rem;
-        font-size: 5rem;
-    }
-}
-
-
-@media (min-width: 2560px) {
-    ul {
-        padding: 32px;
-        transform: scale(1.5);
-    }
-}
-    </style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+        
+        :root {
+            --scarlet: #ff220c;
+            --space-cadet: #1c1f33;
+            --maize: #FFF689;
+            --aquamarine: #00FFCD;
+            --header-height: 3rem;
+            --font-archivo: 'Archivo Black', sans-serif;
+            --font-noto: 'Noto Sans Mono', monospace;
+            --font-tilt: 'Tilt Warp', cursive;
+            --h2-font-size: 4rem;
+            --h3-font-size: 2rem;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--scarlet);
+        }
+        
+        /*
+          1. Use a more-intuitive box-sizing model.
+        */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        
+        /*
+          2. Remove default margin
+        */
+        * {
+            margin: 0;
+        }
+        
+        /*
+          Typographic tweaks!
+          3. Add accessible line-height
+          4. Improve text rendering
+        */
+        
+        body {
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            height: fit-content;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /*
+          5. Improve media defaults
+        */
+        img,
+        picture,
+        video,
+        canvas,
+        svg {
+            display: block;
+            max-width: 100%;
+        }
+        
+        /*
+          6. Remove built-in form typography styles
+        */
+        input,
+        button,
+        textarea,
+        select {
+            font: inherit;
+        }
+        
+        /*
+          7. Avoid text overflows
+        */
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            overflow-wrap: break-word;
+        }
+        
+        /*
+          8. Create a root stacking context
+        */
+        #root,
+        #__next {
+            isolation: isolate;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-rows: repeat(5, auto);
+        }
+        
+        header {
+            display: flex;
+            position: fixed;
+            grid-row: 1;
+            width: 100%;
+            height: var(--header-height);
+            background-color: var(--scarlet);
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+        
+        .header-name {
+            white-space: nowrap;
+            font-family: var(--font-archivo);
+            font-size: 3rem;
+            line-height: 3rem;
+        }
+        
+        .hidden {
+            visibility: hidden;
+        }
+        
+        main {
+            grid-row: 2;
+            width: 100%;
+            background-color: var(--scarlet);
+            margin-top: var(--header-height);
+        }
+        
+        .main-container {
+            display: grid;
+            grid-template-rows: auto auto auto;
+            height: fit-content;
+            width: fit-content;
+            margin: auto;
+        }
+        
+        #my-name-wrapper {
+            height: max-content;
+            width: max-content;
+            z-index: 2;
+        }
+        
+        #hello-wrapper {
+            display: flex;
+            justify-content: center;
+            height: max-content;
+            width: 100%;
+            z-index: 2;
+            transform: translateX(-23.9rem);
+        }
+        
+        #my-name-wrapper {
+            font-family: var(--font-archivo);
+            -webkit-text-stroke: 2px black;
+            color: var(--scarlet);
+            cursor: default;
+            height: 5rem;
+        }
+        
+        .hello {
+            font-family: var(--font-tilt);
+            height: fit-content;
+            font-size: 2rem;
+        }
+        
+        .my-name {
+            font-size: 7rem;
+            font-family: var(--font-archivo);
+            -webkit-text-stroke: 2px black;
+            color: var(--scarlet);
+            cursor: default;
+            padding: 0;
+            line-height: 5rem;
+        }
+        
+        #fullstack-wrapper {
+            z-index: 2;
+            display: flex;
+            justify-content: end;
+        }
+        
+        .fullstack {
+            font-family: var(--font-noto);
+            font-size: 2rem;
+        }
+        
+        .my-name:hover {
+            transition: 200ms;
+        
+            color: black;
+        }
+        
+        .sidebar {
+            z-index: 5;
+            position: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            margin-top: -3rem;
+        }
+        
+        .about-me {
+            grid-row: 3;
+            height: max-content;
+            background-color: var(--scarlet);
+            display: flex;
+            justify-content: center;
+            padding-top: 5rem;
+        }
+        
+        .about-me>.container {
+            min-width: 30rem;
+            max-width: 60rem;
+        }
+        
+        .skills-title {
+            margin-top: 2rem;
+        }
+        
+        .skills-container {
+            display: flex;
+            width: 100%;
+            font-family: var(--font-noto);
+            gap: 3rem;
+        }
+        
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        [class $="title"] {
+            font-family: var(--font-archivo);
+        }
+        
+        h2 {
+            font-size: var(--h2-font-size);
+        
+        }
+        
+        h3 {
+            font-size: var(--h3-font-size);
+        }
+        
+        p {
+            font-family: var(--font-noto);
+        }
+        
+        .projects {
+            display: flex;
+            justify-content: center;
+            grid-row: 4;
+            background-color: var(--scarlet);
+            padding-top: 5rem;
+        }
+        
+        .projects>.container {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            width: 80%;
+            place-content: center;
+        }
+        
+        .projects-title {
+            text-align: center;
+        }
+        
+        
+        .cards-container {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            grid-auto-flow: row;
+            padding-top: 1rem;
+        }
+        
+        [class^="card-"] {
+            border: 2px solid black;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1.5fr 1fr;
+            background-color: black;
+        }
+        
+        .thumbnail {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .project-info {
+            background-color: black;
+            display: grid;
+            padding: .5rem;
+            grid-row: auto auto auto;
+            font-family: var(--font-noto);
+        }
+        
+        .project-name {
+            color: var(--maize);
+        }
+        
+        .summary {
+            color: var(--aquamarine);
+        }
+        
+        .project-info>.links {
+            display: flex;
+            justify-content: end;
+            color: var(--aquamarine);
+            gap: 2rem;
+        
+        }
+        
+        .links>a {
+            cursor: pointer;
+            color: var(--aquamarine);
+            display: flex;
+            align-items: end;
+        }
+        
+        .contact {
+            padding-top: 10rem;
+            grid-row: 5;
+            height: max-content;
+            background-color: var(--scarlet);
+            display: flex;
+            justify-content: center;
+        }
+        
+        .contact-container {
+            width: 960px;
+            height: 20rem;
+            display: grid;
+            grid-template-rows: auto 1fr;
+        }
+        
+        .contact-title {
+            text-align: end;
+        }
+        
+        .contact-container>.links {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 1rem;
+        }
+        
+        .socials {
+            display: flex;
+            justify-content: flex-end;
+            font-family: var(--font-noto);
+            gap: 1rem;
+            height: max-content;
+        }
+        
+        #resume,
+        #github,
+        #linkedin {
+            display: inline-block;
+            color: black;
+        }
+        
+        #resume::after,
+        #github::after,
+        #linkedin::after {
+            content: '';
+            display: block;
+            border-bottom: 2px solid var(--space-cadet);
+            transform: scaleX(0);
+            transition: transform 100ms ease-in-out;
+        }
+        
+        #resume:hover::after,
+        #github:hover::after,
+        #linkedin:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .email-wrapper {
+            display: flex;
+            justify-content: end;
+        }
+        
+        #email {
+            text-decoration: none;
+            color: var(--maize);
+            font-family: var(--font-tilt);
+            font-size: 3rem;
+            transition: 200ms;
+            width: max-content;
+        }
+        
+        #email:hover {
+            color: var(--space-cadet);
+        }
+        
+        .sidebar>nav {
+            display: flex;
+            flex-direction: column;
+            margin-left: -8px;
+            margin-top: var(--header-height);
+        }
+        
+        .selection {
+            cursor: pointer;
+            left: 1rem;
+            height: 1.5rem;
+            width: 100px;
+            transform-style: preserve-3d;
+            transform: rotateY(0) rotateX(0);
+            transition: .3s ease-in-out;
+        }
+        
+        .selection:hover {
+            transform: rotateY(8deg) rotateX(8deg);
+        }
+        
+        .selection:active {
+            transition: 0s none;
+            transform: rotateY(6deg) rotateX(6deg);
+        }
+        
+        #header>nav>ul {
+            visibility: hidden;
+            display: flex;
+            gap: 2rem;
+            line-height: 2rem;
+            font-family: var(--font-tilt);
+        }
+        
+        .side {
+            position: absolute;
+            width: 100%;
+        }
+        
+        .front {
+            height: 100%;
+            text-align: center;
+            font-family: 'Archivo Black', sans-serif;
+            border: 1px solid black;
+            transform: translateZ(50px);
+            background-color: var(--scarlet);
+        }
+        
+        .left {
+            height: 100%;
+            transform: translateX(-50%) rotateY(90deg);
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            background-color: var(--scarlet);
+        }
+        
+        .bottom {
+            height: 400%;
+            transform: translateY(-25.5%) rotateX(90deg);
+            border-right: 1px solid black;
+        }
+        
+        ul {
+            padding: 8px;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        
+        @media (min-width: 3270px) {
+            .cards-container {
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                width: 40vw;
+            }
+        
+            #contact-sec {
+                padding-top: 6rem;
+            }
+        }
+        
+        
+        @media (min-width: 1440px) {
+            .my-name {
+                font-size: 10rem;
+                line-height: 7rem;
+        
+            }
+        
+            #my-name-wrapper {
+                height: 7rem;
+            }
+        
+            #hello-wrapper {
+                transform: translateX(-35.8rem);
+            }
+        
+        
+        
+        }
+        
+        @media (max-width: 1200px) {
+            .about-me>.container {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+        
+            .contact-container {
+                padding-left: 10%;
+                padding-right: 10%;
+                width: 100%;
+            }
+        
+        
+        }
+        
+        @media (max-width: 1000px) {
+            .sidebar {
+                visibility: hidden;
+                width: 0;
+            }
+        
+            .selection {
+                transform: translateX(-100px);
+            }
+        
+            #header>nav>ul {
+                visibility: visible;
+            }
+        
+            main {
+                z-index: -1;
+            }
+        
+            .my-name {
+                font-size: 5rem;
+                line-height: 4rem;
+            }
+        
+            #my-name-wrapper {
+                height: 4rem;
+            }
+        
+            #hello-wrapper {
+                transform: translateX(-16rem);
+            }
+        
+        }
+        
+        @media (max-width: 900px) {
+            #hello-wrapper {
+                transform: translateX(-17.9rem);
+            }
+        
+            .header-name {
+                visibility: hidden;
+                width: 0;
+            }
+        
+            .hello {
+                font-size: 1rem;
+            }
+        
+            .fullstack {
+                font-size: 1rem;
+            }
+        
+        
+        }
+        
+        @media (max-width: 700px) {
+            .contact-title {
+                text-align: center;
+                line-height: 3rem;
+            }
+        
+            #email {
+                font-size: 2rem;
+                margin-top: 2rem;
+            }
+        
+            .email-wrapper {
+                display: flex;
+                justify-content: center;
+            }
+        
+            .socials {
+                justify-content: center;
+            }
+        
+            .my-name {
+                font-size: 4rem;
+                line-height: 3rem;
+            }
+        
+            #my-name-wrapper {
+                height: 3rem;
+            }
+        
+            #hello-wrapper {
+                transform: translateX(-13.9rem);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+            }
+        
+            .about-me>.container {
+                width: 80%;
+            }
+        
+        
+            #my-name-wrapper {
+                height: 8rem;
+            }
+        
+            #hello-wrapper {
+                display: flex;
+                justify-content: center;
+                width: 100vw;
+                transform: translateX(0);
+            }
+        
+            #fullstack-wrapper {
+                justify-content: center;
+            }
+        
+            .my-name {
+                display: flex;
+                justify-content: center;
+                width: 100vw;
+                text-align: center;
+                line-height: 4rem;
+                font-size: 5rem;
+            }
+        }
+        
+        
+        @media (min-width: 2560px) {
+            ul {
+                padding: 32px;
+                transform: scale(1.5);
+            }
+        }</style>
     <div class="sidebar">
         <nav>
             <ul>
