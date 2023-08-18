@@ -325,9 +325,9 @@ p {
 
 .links>a {
     cursor: pointer;
-    color: var(--aquamarine);
     display: flex;
     align-items: end;
+    color: white;
 }
 
 .contact {
