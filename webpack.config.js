@@ -13,8 +13,6 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
-
-
     },
     module: {
         rules: [
@@ -30,7 +28,6 @@ module.exports = {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
             },
-
         ],
     },
     plugins: [
@@ -42,9 +39,5 @@ module.exports = {
                 { from: "./src/style.css"},
             ],
         }),
-
     ],
-
-
-
 };
