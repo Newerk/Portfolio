@@ -230,7 +230,7 @@ main {
   display: flex;
   width: 100%;
   font-family: var(--font-noto);
-  /* gap: 3rem; */
+  gap: 3rem;
 }
 
 .column {
@@ -599,6 +599,10 @@ li {
 }
 
 @media (max-width: 600px) {
+    .about-title {
+        line-height: var(--h2-font-size);
+        padding-bottom: .5rem;
+    }
   .about-me > .container {
     width: 100%;
     padding: 0 8%;
@@ -607,8 +611,16 @@ li {
   #header > nav > ul {
     gap: 1rem;
   }
-  
 
+  .skills-container {
+    gap: 1rem;
+  }
+
+  .contact {
+    padding-top: 6rem;
+  }
+  
+  
   header {
     justify-content: center;
   }
